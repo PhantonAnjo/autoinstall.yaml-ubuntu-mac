@@ -1,0 +1,20 @@
+#cloud-config
+#
+# Ubuntu Desktop 26.04 LTS — modo seguro/interativo.
+# Esta configuração NÃO seleciona, particiona, formata ou criptografa discos.
+# Não forneça uma senha LUKS em YAML. Revise as telas do instalador antes de confirmar.
+
+autoinstall:
+  version: 1
+  interactive-sections:
+    - "*"
+  locale: pt_BR.UTF-8
+  keyboard:
+    layout: br
+    variant: abnt2
+  timezone: America/Sao_Paulo
+  updates: security
+  # O campo identity pode ser omitido quando user-data está presente.
+  # Com interactive-sections: ["*"], a criação da conta permanece na UI.
+  # Conta e hostname devem ser digitados como anjo e anjo-pc no instalador.
+  user-data: {}
